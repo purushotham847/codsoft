@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Pattaya&display=swap');
+
+
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+
+.anitext {
+  display: flex;
+}
+
+
+.anitext .dynamictext {
+
+  overflow: hidden;
+  height: 90px;
+  line-height: 90px;
+}
+.anitext .dynamictext li {
+
+  list-style: none;
+  color: rgb(215, 30, 30);
+  font-weight: 500;
+  position: relative;
+  top: 0px;
+  animation: slide 12s steps(4) infinite;
+}
+
+@keyframes slide {
+  100% {
+    top: -360px;
+  }
+}
+.dynamictext li ::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 23px;
+  height: 60%;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  border-left: 5px solid red;
+  animation: typing 3s steps(15) infinite;
+}
+@keyframes typing {
+  40%,
+  60% {
+    left: calc(100% + 30px);
+  }
+  100% {
+    left: 0;
+  }
+}
